@@ -161,6 +161,12 @@
         .school-info p { font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.4rem; }
         .no-results { text-align: center; grid-column: 1 / -1; padding: 3rem; color: var(--color-text-muted); background: var(--color-surface); border-radius: var(--radius-lg); border: 1px dashed var(--color-border); }
 
+        .district-counts-container { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.5rem; }
+        .district-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50px; font-size: 0.85rem; color: var(--color-text-muted); transition: var(--transition); cursor: pointer; user-select: none; }
+        .district-badge:hover { border-color: var(--color-accent); color: var(--color-text); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(21, 128, 61, 0.05); }
+        .district-badge .count { background: var(--color-primary-soft); color: var(--color-primary); padding: 0.1rem 0.5rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+        [data-theme="dark"] .district-badge .count { background: rgba(34, 197, 94, 0.15); color: var(--color-accent); }
+
         footer { background: var(--color-surface); padding: 3rem 0; border-top: 1px solid var(--color-border); text-align: center; }
     </style>
 </head>
@@ -230,6 +236,8 @@
             <i data-lucide="search" class="search-icon" style="width: 20px;"></i>
             <input type="text" id="school-search" class="search-input" placeholder="Search by school, block, or district...">
         </div>
+
+        <div id="district-counts" class="district-counts-container reveal"></div>
 
         <div class="schools-grid" id="schools-grid">
             <!-- Loading indicator -->
@@ -349,6 +357,7 @@
                     });
                     
                     filteredSchools = [...allSchools];
+                    renderDistrictCounts();
                     renderPage();
                 }
             } catch (error) {
@@ -361,6 +370,47 @@
                 `;
                 lucide.createIcons();
             }
+        }
+
+        function renderDistrictCounts() {
+            const container = document.getElementById('district-counts');
+            if (!container) return;
+            
+            const counts = {};
+            let total = 0;
+            allSchools.forEach(school => {
+                const district = school.district.trim();
+                if (district) {
+                    counts[district] = (counts[district] || 0) + 1;
+                    total++;
+                }
+            });
+            
+            const sortedDistricts = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+            
+            container.innerHTML = '';
+            
+            const totalBadge = document.createElement('div');
+            totalBadge.className = 'district-badge';
+            totalBadge.innerHTML = `All Districts <span class="count">${total}</span>`;
+            totalBadge.addEventListener('click', () => {
+                document.getElementById('school-search').value = '';
+                document.getElementById('school-search').dispatchEvent(new Event('input'));
+            });
+            container.appendChild(totalBadge);
+
+            sortedDistricts.forEach(district => {
+                const badge = document.createElement('div');
+                badge.className = 'district-badge';
+                badge.innerHTML = `${district} <span class="count">${counts[district]}</span>`;
+                
+                badge.addEventListener('click', () => {
+                    document.getElementById('school-search').value = district;
+                    document.getElementById('school-search').dispatchEvent(new Event('input'));
+                });
+                
+                container.appendChild(badge);
+            });
         }
 
         function renderPage() {

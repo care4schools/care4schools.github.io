@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schools | Kalvi Maram Foundation</title>
-    <meta name="description" content="Impactful water and sanitation project. 52 schools, 6900+ students, 100% pure water.">
+    <meta name="description"
+        content="Impactful water and sanitation project. 52 schools, 6900+ students, 100% pure water.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -43,8 +46,16 @@
             --color-primary-soft: #14532d;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-bg);
@@ -53,16 +64,29 @@
             transition: background-color 0.3s ease;
         }
 
-        h1, h2, h3, .display-font {
+        h1,
+        h2,
+        h3,
+        .display-font {
             font-family: 'Instrument Serif', serif;
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.02em;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        section { padding: 6rem 0; }
-        .h2 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .h2 {
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+        }
 
         /* Navigation */
         nav {
@@ -75,99 +99,425 @@
             padding: 1.25rem 0;
         }
 
-        [data-theme="dark"] nav { background: rgba(6, 31, 23, 0.8); }
-
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo {
-            display: flex; align-items: center; gap: 0.75rem; font-weight: 800;
-            color: var(--color-primary); text-decoration: none; font-size: 1.4rem; letter-spacing: -0.5px;
+        [data-theme="dark"] nav {
+            background: rgba(6, 31, 23, 0.8);
         }
-        .nav-links { display: none; gap: 2.5rem; align-items: center; }
-        @media (min-width: 1024px) { .nav-links { display: flex; } }
-        .nav-links a { text-decoration: none; color: var(--color-text); font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
-        .nav-links a:hover { color: var(--color-accent); }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
 
         /* Mobile Menu */
         .mobile-menu-btn {
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            background: var(--color-primary-soft); border: 1px solid var(--color-border);
-            color: var(--color-primary); cursor: pointer; padding: 0.6rem; border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--color-primary-soft);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 0.6rem;
+            border-radius: 50%;
             transition: var(--transition);
         }
-        .mobile-menu-btn:hover { background: var(--color-border); }
-        @media (min-width: 1024px) { .mobile-menu-btn { display: none; } }
+
+        .mobile-menu-btn:hover {
+            background: var(--color-border);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
 
         /* Mobile Drawer */
         .mobile-drawer-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 200; opacity: 0; transition: opacity 0.3s ease;
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .mobile-drawer-overlay.open { display: block; opacity: 1; }
+
+        .mobile-drawer-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+
         .mobile-drawer {
-            position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100%;
-            background: var(--color-surface); z-index: 201; transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1); overflow-y: auto;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(320px, 85vw);
+            height: 100%;
+            background: var(--color-surface);
+            z-index: 201;
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
         }
-        .mobile-drawer.open { right: 0; }
-        .mobile-drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border); }
-        .mobile-drawer-close { background: var(--color-primary-soft); border: 1px solid var(--color-border); color: var(--color-primary); cursor: pointer; padding: 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        .mobile-drawer-close:hover { background: var(--color-border); }
-        .mobile-drawer a { text-decoration: none; color: var(--color-text); font-weight: 500; font-size: 1.1rem; padding: 1rem; border-radius: var(--radius-sm); transition: var(--transition); display: flex; align-items: center; gap: 0.75rem; }
-        .mobile-drawer a:hover { background: var(--color-primary-soft); color: var(--color-accent); }
-        
+
+        .mobile-drawer.open {
+            right: 0;
+        }
+
+        .mobile-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .mobile-drawer-close {
+            background: var(--color-primary-soft);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .mobile-drawer-close:hover {
+            background: var(--color-border);
+        }
+
+        .mobile-drawer a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mobile-drawer a:hover {
+            background: var(--color-primary-soft);
+            color: var(--color-accent);
+        }
+
         /* Buttons */
         .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
-            padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; text-decoration: none;
-            cursor: pointer; transition: var(--transition); border: none; font-size: 1rem; color: var(--color-text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            color: var(--color-text);
         }
-        .btn-primary { background: var(--color-primary); color: white; box-shadow: 0 4px 14px 0 rgba(21, 128, 61, 0.3); }
-        .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
-        .btn-outline { border: 2px solid var(--color-primary); background: transparent; color: var(--color-primary); }
-        .btn-outline:hover { background: var(--color-primary-soft); }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(21, 128, 61, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary-soft);
+        }
 
         .badge {
-            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem;
-            background: var(--color-primary-soft); color: var(--color-primary); border-radius: 50px;
-            font-weight: 700; font-size: 0.75rem; margin-bottom: 1.5rem; text-transform: uppercase; border: 1px solid var(--color-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            border: 1px solid var(--color-border);
         }
 
         /* Animations */
-        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67) all; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67) all;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Theme Toggle Custom */
-        #theme-toggle { background: var(--color-primary-soft); border: 1px solid var(--color-border); color: var(--color-primary); cursor: pointer; padding: 0.6rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        #theme-toggle:hover { background: var(--color-border); }
-        [data-theme="dark"] #theme-toggle { background: rgba(34, 197, 94, 0.15); color: var(--color-accent); border-color: rgba(34, 197, 94, 0.3); }
-        [data-theme="dark"] .btn-primary { background: var(--color-accent); color: #051b14; box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.3); }
-        [data-theme="dark"] .btn-primary:hover { background: #16a34a; }
+        #theme-toggle {
+            background: var(--color-primary-soft);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 0.6rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        #theme-toggle:hover {
+            background: var(--color-border);
+        }
+
+        [data-theme="dark"] #theme-toggle {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--color-accent);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        [data-theme="dark"] .btn-primary {
+            background: var(--color-accent);
+            color: #051b14;
+            box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.3);
+        }
+
+        [data-theme="dark"] .btn-primary:hover {
+            background: #16a34a;
+        }
 
         /* Schools Section specific CSS */
-        .schools-section { padding-top: 4rem; padding-bottom: 2rem; min-height: 70vh; }
-        .search-container { max-width: 600px; margin: 0 auto 3rem; position: relative; }
-        .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); }
-        .search-input { width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--color-border); border-radius: 50px; background: var(--color-surface); color: var(--color-text); font-family: inherit; font-size: 1rem; box-shadow: var(--shadow); transition: var(--transition); }
-        .search-input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.15); }
-        
-        .schools-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-        @media (min-width: 640px) { .schools-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .schools-grid { grid-template-columns: repeat(3, 1fr); } }
+        .schools-section {
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            min-height: 70vh;
+        }
 
-        .school-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; transition: var(--transition); display: flex; align-items: flex-start; gap: 1rem; opacity: 1; transform: none; }
-        .school-card:hover { transform: translateY(-4px); border-color: var(--color-accent); box-shadow: 0 10px 25px rgba(21, 128, 61, 0.08); }
-        .school-icon { background: var(--color-primary-soft); color: var(--color-primary); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        [data-theme="dark"] .school-icon { background: rgba(34, 197, 94, 0.1); color: var(--color-accent); }
-        .school-info h4 { font-size: 1.1rem; margin-bottom: 0.25rem; color: var(--color-text); line-height: 1.3; }
-        .school-info p { font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.4rem; }
-        .no-results { text-align: center; grid-column: 1 / -1; padding: 3rem; color: var(--color-text-muted); background: var(--color-surface); border-radius: var(--radius-lg); border: 1px dashed var(--color-border); }
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
 
-        .district-counts-container { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.5rem; }
-        .district-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50px; font-size: 0.85rem; color: var(--color-text-muted); transition: var(--transition); cursor: pointer; user-select: none; }
-        .district-badge:hover { border-color: var(--color-accent); color: var(--color-text); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(21, 128, 61, 0.05); }
-        .district-badge .count { background: var(--color-primary-soft); color: var(--color-primary); padding: 0.1rem 0.5rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
-        [data-theme="dark"] .district-badge .count { background: rgba(34, 197, 94, 0.15); color: var(--color-accent); }
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+        }
 
-        footer { background: var(--color-surface); padding: 3rem 0; border-top: 1px solid var(--color-border); text-align: center; }
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 1px solid var(--color-border);
+            border-radius: 50px;
+            background: var(--color-surface);
+            color: var(--color-text);
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.15);
+        }
+
+        .schools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .schools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .schools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .school-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            opacity: 1;
+            transform: none;
+        }
+
+        .school-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.08);
+        }
+
+        .school-icon {
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        [data-theme="dark"] .school-icon {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--color-accent);
+        }
+
+        .school-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        .school-info p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 3rem;
+            color: var(--color-text-muted);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px dashed var(--color-border);
+        }
+
+        .district-counts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .district-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            transition: var(--transition);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .district-badge:hover {
+            border-color: var(--color-accent);
+            color: var(--color-text);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(21, 128, 61, 0.05);
+        }
+
+        .district-badge .count {
+            background: var(--color-primary-soft);
+            color: var(--color-primary);
+            padding: 0.1rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .district-badge .count {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--color-accent);
+        }
+
+        footer {
+            background: var(--color-surface);
+            padding: 3rem 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -187,10 +537,12 @@
                 <button id="theme-toggle" aria-label="Toggle dark mode">
                     <i data-lucide="moon" id="theme-icon" style="width: 20px;"></i>
                 </button>
-                <a href="index.html#donate" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.9rem; color: white !important;">Contribute Now</a>
+                <a href="index.html#donate" class="btn btn-primary"
+                    style="padding: 0.6rem 1.4rem; font-size: 0.9rem; color: white !important;">Contribute Now</a>
             </div>
             <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <button id="theme-toggle-mobile" class="mobile-menu-btn" aria-label="Toggle dark mode" style="display: none;">
+                <button id="theme-toggle-mobile" class="mobile-menu-btn" aria-label="Toggle dark mode"
+                    style="display: none;">
                     <i data-lucide="moon" id="theme-icon-mobile" style="width: 20px;"></i>
                 </button>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
@@ -212,11 +564,16 @@
                 <i data-lucide="x" style="width: 20px;"></i>
             </button>
         </div>
-        <a href="index.html#story" onclick="closeDrawer()"><i data-lucide="book-open" style="width: 18px; color: var(--color-accent);"></i> Our Story</a>
-        <a href="index.html#impact" onclick="closeDrawer()"><i data-lucide="bar-chart-3" style="width: 18px; color: var(--color-accent);"></i> Our Impact</a>
-        <a href="#" onclick="closeDrawer()" style="color: var(--color-accent);"><i data-lucide="map-pin" style="width: 18px; color: var(--color-accent);"></i>Schools</a>
-        <a href="index.html#volunteer" onclick="closeDrawer()"><i data-lucide="users" style="width: 18px; color: var(--color-accent);"></i> Join Us</a>
-        <a href="index.html#donate" class="btn btn-primary" onclick="closeDrawer()" style="color: white !important;">Contribute Now</a>
+        <a href="index.html#story" onclick="closeDrawer()"><i data-lucide="book-open"
+                style="width: 18px; color: var(--color-accent);"></i> Our Story</a>
+        <a href="index.html#impact" onclick="closeDrawer()"><i data-lucide="bar-chart-3"
+                style="width: 18px; color: var(--color-accent);"></i> Our Impact</a>
+        <a href="#" onclick="closeDrawer()" style="color: var(--color-accent);"><i data-lucide="map-pin"
+                style="width: 18px; color: var(--color-accent);"></i>Schools</a>
+        <a href="index.html#volunteer" onclick="closeDrawer()"><i data-lucide="users"
+                style="width: 18px; color: var(--color-accent);"></i> Join Us</a>
+        <a href="index.html#donate" class="btn btn-primary" onclick="closeDrawer()"
+            style="color: white !important;">Contribute Now</a>
     </div>
 
     <!-- Schools Section -->
@@ -234,7 +591,8 @@
 
         <div class="search-container reveal">
             <i data-lucide="search" class="search-icon" style="width: 20px;"></i>
-            <input type="text" id="school-search" class="search-input" placeholder="Search by school, block, or district...">
+            <input type="text" id="school-search" class="search-input"
+                placeholder="Search by school, block, or district...">
         </div>
 
         <div id="district-counts" class="district-counts-container reveal"></div>
@@ -244,15 +602,31 @@
             <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--color-text-muted);">
                 <i data-lucide="loader-2" style="width: 32px; animation: spin 1s linear infinite;"></i>
                 <p style="margin-top: 1rem;">Loading schools data...</p>
-                <style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>
+                <style>
+                    @keyframes spin {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
             </div>
         </div>
 
         <!-- Pagination -->
-        <div class="pagination" id="pagination" style="display: none; justify-content: center; gap: 1.5rem; align-items: center; margin-top: 3.5rem;">
-            <button class="btn btn-outline" id="prev-btn" style="padding: 0.6rem 1.2rem; gap: 0.3rem;"><i data-lucide="chevron-left" style="width: 18px;"></i> Prev</button>
+        <div class="pagination" id="pagination"
+            style="display: none; justify-content: center; gap: 1.5rem; align-items: center; margin-top: 3.5rem;">
+            <button class="btn btn-outline" id="prev-btn" style="padding: 0.6rem 1.2rem; gap: 0.3rem;"><i
+                    data-lucide="chevron-left" style="width: 18px;"></i> Prev</button>
             <span id="page-info" style="font-weight: 600; color: var(--color-text-muted);">Page 1 of 1</span>
-            <button class="btn btn-outline" id="next-btn" style="padding: 0.6rem 1.2rem; gap: 0.3rem;">Next <i data-lucide="chevron-right" style="width: 18px;"></i></button>
+            <button class="btn btn-outline" id="next-btn" style="padding: 0.6rem 1.2rem; gap: 0.3rem;">Next <i
+                    data-lucide="chevron-right" style="width: 18px;"></i></button>
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 4rem;">
+            <a href="index.html#donate" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+                <i data-lucide="heart" style="width: 20px;"></i>
+                Support Our Initiative
+            </a>
         </div>
     </section>
 
@@ -329,7 +703,7 @@
         const RAW_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQn6w7r5X8GXPGD6chcZxfEDLykrkxVvO7YkvJ7r-mD0HPTAyA4vdASCjqmy_e5CjiEtzVl6gx_l35k/pub?gid=0&single=true&output=csv';
         // Use a free CORS proxy ONLY if opening the HTML file directly locally. Github Pages will use the direct link.
         const SHEET_CSV_URL = window.location.protocol === 'file:' ? 'https://corsproxy.io/?' + encodeURIComponent(RAW_URL) : RAW_URL;
-        
+
         let allSchools = [];
         let filteredSchools = [];
         let currentPage = 1;
@@ -339,7 +713,7 @@
             try {
                 const response = await fetch(SHEET_CSV_URL);
                 const csvText = await response.text();
-                
+
                 const lines = csvText.split('\n').filter(line => line.trim() !== '');
                 if (lines.length > 1) {
                     const headers = lines[0].split(',').map(h => h.trim());
@@ -355,7 +729,7 @@
                             district: distIdx !== -1 && cells[distIdx] ? cells[distIdx] : ''
                         };
                     });
-                    
+
                     filteredSchools = [...allSchools];
                     renderDistrictCounts();
                     renderPage();
@@ -375,7 +749,7 @@
         function renderDistrictCounts() {
             const container = document.getElementById('district-counts');
             if (!container) return;
-            
+
             const counts = {};
             let total = 0;
             allSchools.forEach(school => {
@@ -385,11 +759,11 @@
                     total++;
                 }
             });
-            
+
             const sortedDistricts = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-            
+
             container.innerHTML = '';
-            
+
             const totalBadge = document.createElement('div');
             totalBadge.className = 'district-badge';
             totalBadge.innerHTML = `All Districts <span class="count">${total}</span>`;
@@ -403,12 +777,12 @@
                 const badge = document.createElement('div');
                 badge.className = 'district-badge';
                 badge.innerHTML = `${district} <span class="count">${counts[district]}</span>`;
-                
+
                 badge.addEventListener('click', () => {
                     document.getElementById('school-search').value = district;
                     document.getElementById('school-search').dispatchEvent(new Event('input'));
                 });
-                
+
                 container.appendChild(badge);
             });
         }
@@ -451,11 +825,11 @@
             const currentSchools = filteredSchools.slice(start, end);
 
             const fragment = document.createDocumentFragment();
-            
+
             currentSchools.forEach(school => {
                 const card = document.createElement('div');
                 card.className = 'school-card';
-                
+
                 let locationText = school.block;
                 if (locationText && school.district) locationText += ', ';
                 locationText += school.district;
@@ -495,8 +869,8 @@
 
         document.getElementById('school-search').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-            filteredSchools = allSchools.filter(s => 
-                s.name.toLowerCase().includes(searchTerm) || 
+            filteredSchools = allSchools.filter(s =>
+                s.name.toLowerCase().includes(searchTerm) ||
                 s.block.toLowerCase().includes(searchTerm) ||
                 s.district.toLowerCase().includes(searchTerm)
             );
@@ -507,4 +881,5 @@
         fetchSchools();
     </script>
 </body>
+
 </html>
